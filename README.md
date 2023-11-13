@@ -7,7 +7,6 @@ Prototype of using Three.js to simulate going through a gallery and creating a m
 
 To change images or edit any of the settings for the gallery, go to the `IdData.js` file to make those edits. 
 
-
 ## License
 
 Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International

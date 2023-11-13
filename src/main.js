@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { PointerLockControls } from 'three-stdlib';
 import { FontLoader } from 'three/addons/loaders/FontLoader.js';
 import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
-import * as idData from './public/js/IdData'
+import * as idData from '../public/js/IdData.js'
 
 const scene = new THREE.Scene(); // create a new scene
 
@@ -40,14 +40,14 @@ function createPainting(imageURL, width, height, position) {
 
 // Create paintings and add them to the scene
 const painting1 = createPainting(
-  `../src/public/artworks/${idData.imageArray[0]}`,
+  `../artworks/${idData.imageArray[0]}`,
   10,
   5,
   new THREE.Vector3(-10, 3, -19.99)
 );
 
 const painting2 = createPainting(
-  `../src/public/artworks/${idData.imageArray[1]}`,
+  `../artworks/${idData.imageArray[1]}`,
   10,
   5,
   new THREE.Vector3(10, 3, -19.99)
@@ -55,7 +55,7 @@ const painting2 = createPainting(
 
 // Paintings on the left wall
 const painting3 = createPainting(
-  `../src/public/artworks/${idData.imageArray[2]}`,
+  `../artworks/${idData.imageArray[2]}`,
   10,
   5,
   new THREE.Vector3(-19.99, 3, -10)
@@ -64,7 +64,7 @@ painting3.rotation.y = Math.PI / 2;
 
 // Paintings on the left wall
 const painting4 = createPainting(
-  `../src/public/artworks/${idData.imageArray[3]}`,
+  `../artworks/${idData.imageArray[3]}`,
   10,
   5,
   new THREE.Vector3(-19.99, 3, 10)
@@ -72,7 +72,7 @@ const painting4 = createPainting(
 painting4.rotation.y = Math.PI / 2;
 
 const painting5 = createPainting(
-  `../src/public/artworks/${idData.imageArray[4]}`,
+  `../artworks/${idData.imageArray[4]}`,
   10,
   5,
   new THREE.Vector3(19.99, 3, 10)
@@ -80,7 +80,7 @@ const painting5 = createPainting(
 painting5.rotation.y = -Math.PI / 2;
 
 const painting6 = createPainting(
-  `../src/public/artworks/${idData.imageArray[5]}`,
+  `../artworks/${idData.imageArray[5]}`,
   10,
   5,
   new THREE.Vector3(19.99, 3, -10)
@@ -88,7 +88,7 @@ const painting6 = createPainting(
 painting6.rotation.y = -Math.PI / 2;
 
 const painting7 = createPainting(
-  `../src/public/artworks/${idData.imageArray[6]}`,
+  `../artworks/${idData.imageArray[6]}`,
   10,
   5,
   new THREE.Vector3(-10, 3, 19.99)
@@ -96,7 +96,7 @@ const painting7 = createPainting(
 painting7.rotation.y = Math.PI;
 
 const painting8 = createPainting(
-  `../src/public/artworks/${idData.imageArray[7]}`,
+  `../artworks/${idData.imageArray[7]}`,
   10,
   5,
   new THREE.Vector3(10, 3, 19.99)
@@ -364,7 +364,7 @@ loader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json
 
 // Texture of the floor
 const textureLoader = new THREE.TextureLoader();
-const floorTexture = textureLoader.load('../src/public/img/floor.png');
+const floorTexture = textureLoader.load('../img/floor.png');
 floorTexture.wrapS = THREE.RepeatWrapping; // wrapS is horizonatl direction
 floorTexture.wrapT = THREE.RepeatWrapping; // wrapT the vertical direction
 floorTexture.repeat.set(20, 20); // how many times to repeat the texture
@@ -388,7 +388,7 @@ let wallGroup = new THREE.Group(); // create a group to hold the walls
 scene.add(wallGroup); // add the group to the scene, then any child added to the group will display to the scene too
 
 // Create wall material with realistic colors and texture
-const wallTexture = textureLoader.load('../src/public/img/white-texture.jpg');
+const wallTexture = textureLoader.load('../img/white-texture.jpg');
 wallTexture.wrapS = THREE.RepeatWrapping;
 wallTexture.wrapT = THREE.RepeatWrapping;
 wallTexture.repeat.set(1, 1);
@@ -437,7 +437,7 @@ for (let i = 0; i < wallGroup.children.length; i++) {
 }
 
 // Create the ceiling
-const ceilingTexture = textureLoader.load('../src/public/img/white-texture.jpg');
+const ceilingTexture = textureLoader.load('../img/white-texture.jpg');
 const ceilingGeometry = new THREE.PlaneGeometry(45, 40);
 const ceilingMaterial = new THREE.MeshLambertMaterial({ map: ceilingTexture });
 const ceilingPlane = new THREE.Mesh(ceilingGeometry, ceilingMaterial); // create ceiling with geometry and material
